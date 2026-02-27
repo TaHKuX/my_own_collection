@@ -1,0 +1,19 @@
+---
+- name: Test module from collection
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  
+  collections:
+    - my_own_namespace.yandex_cloud_elk
+    
+  tasks:
+    - name: Create file using collection module
+      my_own_module:
+        path: /tmp/collection_test.txt
+        content: "Hello from collection!"
+      register: result
+      
+    - name: Show result
+      debug:
+        var: result

@@ -1,0 +1,11 @@
+---
+- name: single task playbook
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  
+  tasks:
+    - name: Создать файл
+      my_own_module:
+        path: /tmp/test_file.txt
+        content: "Тестовый тест"

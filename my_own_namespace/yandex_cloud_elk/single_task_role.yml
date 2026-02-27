@@ -1,0 +1,11 @@
+---
+- name: single task role
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  
+  collections:
+    - my_own_namespace.yandex_cloud_elk
+    
+  roles:
+    - my_own_module
